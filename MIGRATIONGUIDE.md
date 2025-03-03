@@ -203,7 +203,7 @@ ValueError: Unable to find model with ID: gemini-xyz
 **Solution:**
 Check that you're using a valid model ID for the provider:
 - Gemini: "gemini-2.0-flash", "gemini-2.0-pro"
-- OpenAI: "gpt-4o", "gpt-4-turbo", "gpt-3.5-turbo" 
+- OpenAI: "gpt-4o", "gpt-4-turbo", "gpt-3.5-turbo"
 - Anthropic: "claude-3-5-sonnet-20240620", "claude-3-opus-20240229"
 
 ### Issue: Tool Not Available
