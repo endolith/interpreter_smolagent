@@ -7,25 +7,20 @@ This guide will help you set up and use `interpreter-smol`, a thin wrapper aroun
 1. Install the required packages:
 
     ```bash
-    # Install SmolAgents and base requirements
-    pip install smolagents
-
-    # Install Gemini support (required for default model)
-    pip install google-genai
-    ```
-
-2. Download and install the interpreter-smol package:
-
-    ```bash
     # Clone the repository
     git clone https://github.com/your-username/interpreter-smol.git
     cd interpreter-smol
 
-    # Install the package
-    pip install -e .
+    # Install the package with Gemini support (default model)
+    pip install -e .[gemini]
+
+    # For other providers, use the appropriate extra:
+    # pip install -e .[openai]     # For OpenAI models
+    # pip install -e .[anthropic]  # For Anthropic Claude models
+    # pip install -e .[complete]   # Install all dependencies for all providers
     ```
 
-3. Set up your API keys as environment variables:
+2. Set up your API keys as environment variables:
 
     ```bash
     # For Gemini (recommended)
