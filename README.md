@@ -1,13 +1,13 @@
 # interpreter-smol: Installation and Usage Guide
 
-This guide will help you set up and use `interpreter-smol`, a thin wrapper around SmolaGents that provides an Open-Interpreter-like experience with Gemini support.
+This guide will help you set up and use `interpreter-smol`, a thin wrapper around SmolAgents that provides an Open-Interpreter-like experience with Gemini support.
 
 ## Installation
 
 1. Install the required packages:
 
 ```bash
-# Install SmolaGents and base requirements
+# Install SmolAgents and base requirements
 pip install smolagents
 
 # Install Gemini support (required for default model)
@@ -119,9 +119,9 @@ The following tools are available:
 | `-i`, `--interactive` | Start in interactive mode | `False` |
 | `-v`, `--verbose` | Enable verbose output | `False` |
 
-## Advanced Usage with SmolaGents
+## Advanced Usage with SmolAgents
 
-For more advanced use cases, you can access the SmolaGents functionality directly:
+For more advanced use cases, you can access the SmolAgents functionality directly:
 
 ```python
 from smolagents import CodeAgent
@@ -148,10 +148,10 @@ agent.run("Your complex task here")
 interpreter-smol offers several advantages compared to Open-Interpreter:
 
 1. **Native Gemini 2.0 support**: First-class integration with Google's latest Gemini models
-2. **Modern agent framework**: Built on SmolaGents, providing a more robust foundation
+2. **Modern agent framework**: Built on SmolAgents, providing a more robust foundation
 3. **Enhanced security**: Better code execution security options
 4. **Simplified implementation**: Thin wrapper focused on essential functionality
-5. **Open-source foundation**: Built on the well-maintained SmolaGents library
+5. **Open-source foundation**: Built on the well-maintained SmolAgents library
 
 ## Limitations
 

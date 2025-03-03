@@ -8,7 +8,7 @@ long_description = (this_directory / "interpreter_smol" / "README.md").read_text
 setup(
     name="interpreter-smol",
     version="0.2.0",
-    description="A powerful interpreter with evolving agents built on SmolaGents",
+    description="A powerful interpreter with evolving agents built on SmolAgents",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="velinxs",

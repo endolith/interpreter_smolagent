@@ -1,5 +1,5 @@
 """
-interpreter-smol - A powerful interpreter with evolving agents built on SmolaGents
+interpreter-smol - A powerful interpreter with evolving agents built on SmolAgents
 """
 
 from .core.interpreter import Interpreter, main

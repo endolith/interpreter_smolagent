@@ -1,5 +1,5 @@
 """
-interpreter_smol - A thin wrapper around SmolaGents that provides an Open-Interpreter-like experience
+interpreter_smol - A thin wrapper around SmolAgents that provides an Open-Interpreter-like experience
 """
 
 import os
@@ -17,7 +17,7 @@ from smolagents.default_tools import TOOL_MAPPING
 from interpreter_smol.tools import EnhancedPythonInterpreter
 
 class Interpreter:
-    """Simple Open-Interpreter-like interface built on SmolaGents."""
+    """Simple Open-Interpreter-like interface built on SmolAgents."""
 
     def __init__(
         self,
@@ -146,7 +146,7 @@ class Interpreter:
 
 def main():
     """Command line interface for interpreter-smol."""
-    parser = argparse.ArgumentParser(description="interpreter-smol: Open-Interpreter-like CLI built on SmolaGents")
+    parser = argparse.ArgumentParser(description="interpreter-smol: Open-Interpreter-like CLI built on SmolAgents")
 
     # Simplified CLI arguments
     parser.add_argument("prompt", nargs="?", help="The prompt to run")

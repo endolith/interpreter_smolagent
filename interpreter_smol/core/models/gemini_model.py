@@ -1,5 +1,5 @@
 """
-gemini_model.py - Google Generative AI (Gemini) model adapter for SmolaGents
+gemini_model.py - Google Generative AI (Gemini) model adapter for SmolAgents
 using the new Google GenAI SDK (google-genai v1.0)
 """
 
@@ -24,9 +24,9 @@ except ImportError:
 
 class GeminiModel(Model):
     """
-    Adapter for Google's Generative AI models (Gemini) to work with SmolaGents.
+    Adapter for Google's Generative AI models (Gemini) to work with SmolAgents.
 
-    This model adapter allows using Google's Gemini models with the SmolaGents framework,
+    This model adapter allows using Google's Gemini models with the SmolAgents framework,
     providing proper handling of tool calls, message formatting, and response parsing.
     Uses the new google-genai v1.0 SDK.
 
@@ -219,11 +219,11 @@ final_answer("Tools test completed - we saw some successes but also some errors.
             raise
 
     def _convert_messages_to_gemini_format(self, messages: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-        """Convert SmolaGents messages to Gemini's format."""
+        """Convert SmolAgents messages to Gemini's format."""
         gemini_messages = []
 
         for message in messages:
-            # Map SmolaGents roles to Gemini roles
+            # Map SmolAgents roles to Gemini roles
             role = "user" if message["role"] == MessageRole.USER else "model"
 
             if isinstance(message["content"], list):
