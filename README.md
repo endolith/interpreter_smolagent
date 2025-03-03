@@ -119,8 +119,7 @@ The following tools are available:
 For more advanced use cases, you can access the SmolAgents functionality directly:
 
 ```python
-from smolagents import CodeAgent
-from smolagents import LiteLLMModel
+from smolagents import CodeAgent, LiteLLMModel
 from smolagents.default_tools import TOOL_MAPPING
 
 # Create a custom Gemini model
