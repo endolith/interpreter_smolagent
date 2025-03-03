@@ -6,36 +6,36 @@ This guide will help you set up and use `interpreter-smol`, a thin wrapper aroun
 
 1. Install the required packages:
 
-```bash
-# Install SmolAgents and base requirements
-pip install smolagents
+    ```bash
+    # Install SmolAgents and base requirements
+    pip install smolagents
 
-# Install Gemini support (required for default model)
-pip install google-genai
-```
+    # Install Gemini support (required for default model)
+    pip install google-genai
+    ```
 
 2. Download and install the interpreter-smol package:
 
-```bash
-# Clone the repository
-git clone https://github.com/your-username/interpreter-smol.git
-cd interpreter-smol
+    ```bash
+    # Clone the repository
+    git clone https://github.com/your-username/interpreter-smol.git
+    cd interpreter-smol
 
-# Install the package
-pip install -e .
-```
+    # Install the package
+    pip install -e .
+    ```
 
 3. Set up your API keys as environment variables:
 
-```bash
-# For Gemini (recommended)
-export GOOGLE_API_KEY="your-api-key-here"
+    ```bash
+    # For Gemini (recommended)
+    export GOOGLE_API_KEY="your-api-key-here"
 
-# For other providers (optional)
-export OPENAI_API_KEY="your-api-key-here"
-export ANTHROPIC_API_KEY="your-api-key-here"
-export HF_API_TOKEN="your-api-key-here"
-```
+    # For other providers (optional)
+    export OPENAI_API_KEY="your-api-key-here"
+    export ANTHROPIC_API_KEY="your-api-key-here"
+    export HF_API_TOKEN="your-api-key-here"
+    ```
 
 ## Basic Usage
 
