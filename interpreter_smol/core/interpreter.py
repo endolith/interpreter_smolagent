@@ -139,9 +139,29 @@ class Interpreter:
             self.agent.run(initial_prompt)
 
         try:
-            print("Welcome to interpreter-smol! Type 'exit' to quit.")
+            print("\nWelcome to interpreter-smol! Using model "
+                  f"{self.model.model_id}.")
+
+            # Display available tools
+            print("\nTools available to the agent:")
+            for tool in self.agent.tools.values():
+                print(f"  • {tool.name}: {tool.description}")
+
+            # Display managed agents if any
+            if hasattr(self.agent, 'managed_agents') and self.agent.managed_agents:
+                print("\nAvailable Agents:")
+                for agent in self.agent.managed_agents.values():
+                    print(f"  • {agent.name}: {agent.description}")
+
+            # Display authorized imports
+            print("\nAvailable Python Libraries:")
+            print(" ".join(sorted(self.agent.additional_authorized_imports)))
+
+            print("\nYou can now start chatting with the agent!")
+            print("Type 'exit', 'quit', or 'q' to end the session.\n")
+
             while True:
-                user_input = input("\n> ")
+                user_input = input("> ")
                 if user_input.lower() in ["exit", "quit", "q"]:
                     break
                 self.agent.run(user_input, reset=False)
