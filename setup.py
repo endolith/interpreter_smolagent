@@ -29,13 +29,9 @@ setup(
         "requests>=2.25.0",
     ],
     extras_require={
-        "gemini": ["google-genai>=1.0.0"],
-        "openai": ["openai>=1.0.0"],
-        "anthropic": ["anthropic>=0.5.0"],
+        "hf": ["huggingface-hub>=0.28.0"],  # For HF models
         "complete": [
-            "google-genai>=1.0.0",
-            "openai>=1.0.0",
-            "anthropic>=0.5.0",
+            "huggingface-hub>=0.28.0",  # For HF models
             "pillow>=9.0.0",
             "numpy>=1.20.0",
             "pandas>=1.3.0",

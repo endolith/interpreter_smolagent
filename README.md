@@ -11,25 +11,25 @@ This guide will help you set up and use `interpreter-smol`, a thin wrapper aroun
     git clone https://github.com/your-username/interpreter-smol.git
     cd interpreter-smol
 
-    # Install the package with Gemini support (default model)
-    pip install -e .[gemini]
+    # Install the package (includes support for Gemini, OpenAI, Anthropic, and OpenRouter via LiteLLM)
+    pip install -e .
 
-    # For other providers, use the appropriate extra:
-    # pip install -e .[openai]     # For OpenAI models
-    # pip install -e .[anthropic]  # For Anthropic Claude models
-    # pip install -e .[complete]   # Install all dependencies for all providers
+    # For Hugging Face models:
+    # pip install -e .[hf]
+
+    # For all features including data science tools:
+    # pip install -e .[complete]
     ```
 
 2. Set up your API keys as environment variables:
 
     ```bash
-    # For Gemini (recommended)
-    export GOOGLE_API_KEY="your-api-key-here"
-
-    # For other providers (optional)
-    export OPENAI_API_KEY="your-api-key-here"
-    export ANTHROPIC_API_KEY="your-api-key-here"
-    export HF_API_TOKEN="your-api-key-here"
+    # Set up your API keys as environment variables:
+    export GOOGLE_API_KEY="your-api-key-here"      # For Gemini
+    export OPENAI_API_KEY="your-api-key-here"      # For OpenAI
+    export ANTHROPIC_API_KEY="your-api-key-here"   # For Anthropic
+    export OPENROUTER_API_KEY="your-api-key-here"  # For OpenRouter
+    export HF_API_TOKEN="your-api-key-here"        # For Hugging Face
     ```
 
 ## Basic Usage
