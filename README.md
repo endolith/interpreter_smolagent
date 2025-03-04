@@ -40,19 +40,19 @@ The command line interface is designed to be simple and familiar to Open-Interpr
 
 ```bash
 # Basic usage (defaults to Gemini model)
-interpreter-smol "Write a Python function to calculate the Fibonacci sequence"
+interpreter-smol "What are the 6th through 8th Fibonacci numbers?"
 
 # Start an interactive chat session
 interpreter-smol
 
 # Specify a different model provider
-interpreter-smol --model openai "Write a function to calculate prime numbers"
+interpreter-smol --model openai "Find the 619th prime number"
 
 # Enable specific tools
 interpreter-smol --tools unrestricted_python web_search "Find the current Bitcoin price and plot it"
 
 # Allow additional Python imports
-interpreter-smol --imports numpy pandas matplotlib.pyplot scipy "Create a visualization of the sine function"
+interpreter-smol --imports scipy "Create a visualization of the sine function"
 
 # Enable verbose output
 interpreter-smol -v "Calculate the factorial of 10"
@@ -69,7 +69,7 @@ from interpreter_smol import Interpreter
 interpreter = Interpreter()
 
 # Run a single prompt
-result = interpreter.run("Write a Python function to calculate prime numbers")
+result = interpreter.run("Count the number of words in this sentence.")
 
 # Start an interactive chat session
 interpreter.chat("Help me analyze this dataset")
