@@ -68,6 +68,15 @@ class Interpreter:
                 temperature=self.temperature,
                 max_tokens=self.max_tokens,
             )
+        elif self.model_type.lower() == "openrouter":
+            from smolagents import LiteLLMModel
+            return LiteLLMModel(
+                model_id=self.model_id or "openrouter/google/gemini-2.0-flash-001",
+                api_key=self.api_key or os.environ.get("OPENROUTER_API_KEY"),
+                api_base="https://openrouter.ai/api/v1",
+                temperature=self.temperature,
+                max_tokens=self.max_tokens,
+            )
         elif self.model_type.lower() == "hf":
             from smolagents import HfApiModel
             return HfApiModel(
@@ -151,7 +160,7 @@ def main():
     # Simplified CLI arguments
     parser.add_argument("prompt", nargs="?", help="The prompt to run")
     parser.add_argument("--model", "-m", default="gemini",
-                        choices=["gemini", "openai", "anthropic", "hf"],
+                        choices=["gemini", "openai", "anthropic", "openrouter", "hf"],
                         help="Model provider to use")
     parser.add_argument("--model-id", default=None,
                         help="Specific model ID (defaults to best model for provider)")
@@ -182,6 +191,8 @@ def main():
             os.environ["OPENAI_API_KEY"] = args.api_key
         elif args.model.lower() == "anthropic":
             os.environ["ANTHROPIC_API_KEY"] = args.api_key
+        elif args.model.lower() == "openrouter":
+            os.environ["OPENROUTER_API_KEY"] = args.api_key
         elif args.model.lower() == "hf":
             os.environ["HF_API_TOKEN"] = args.api_key
 
