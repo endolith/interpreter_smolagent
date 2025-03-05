@@ -143,33 +143,18 @@ For more advanced use cases, you can access the SmolAgents functionality directl
 ```python
 from smolagents import CodeAgent, LiteLLMModel
 from smolagents.default_tools import TOOL_MAPPING
+from interpreter_smol.tools import EnhancedPythonInterpreter
 
 # Create a custom Gemini model
 model = LiteLLMModel(model_id="gemini/gemini-2.0-flash")
 
-# Create an agent with specific tools
+# Create an agent with our enhanced Python interpreter
 agent = CodeAgent(
-    tools=[TOOL_MAPPING["unrestricted_python"](), TOOL_MAPPING["web_search"]()],
+    tools=[EnhancedPythonInterpreter(), TOOL_MAPPING["web_search"]()],
     model=model,
-    additional_authorized_imports=["numpy", "pandas"],
     verbosity_level=2
 )
 
 # Run the agent
 agent.run("Your complex task here")
 ```
-
-## Differences from Open-Interpreter
-
-interpreter-smol offers several advantages compared to Open-Interpreter:
-
-1. **Native Gemini 2.0 support**: First-class integration with Google's latest Gemini models
-2. **Modern agent framework**: Built on SmolAgents, providing a more robust foundation
-3. **Enhanced security**: Better code execution security options
-4. **Simplified implementation**: Thin wrapper focused on essential functionality
-5. **Open-source foundation**: Built on the well-maintained SmolAgents library
-
-## Limitations
-
-- Some advanced features from Open-Interpreter (like vision) require additional setup
-- Currently focused on core functionality; some specialized features may not be available yet
