@@ -2,35 +2,57 @@
 
 This guide will help you set up and use `interpreter-smol`, a thin wrapper around SmolAgents that provides an Open-Interpreter-like experience with Gemini support.
 
-## Installation
+## Quick Start
 
-1. Install the required packages:
+```bash
+# Create and activate virtual environment
+python3 -m venv venv
+source venv/bin/activate  # On Unix/macOS
+# or
+.venv\Scripts\activate    # On Windows
 
-    ```bash
-    # Clone the repository
-    git clone https://github.com/your-username/interpreter-smol.git
-    cd interpreter-smol
+# Install the package (includes support for Gemini, OpenAI, Anthropic, and OpenRouter via LiteLLM)
+pip install -e .
 
-    # Install the package (includes support for Gemini, OpenAI, Anthropic, and OpenRouter via LiteLLM)
-    pip install -e .
+# Run the interpreter
+interpreter-smol          # Basic interpreter
+# or
+interpreter-evolve        # Evolving agent version powered by smolagents
+```
 
-    # For Hugging Face models:
-    # pip install -e .[hf]
+## Installation Options
 
-    # For all features including data science tools:
-    # pip install -e .[complete]
-    ```
+1. Basic Installation:
 
-2. Set up your API keys as environment variables:
+   ```bash
+   # Clone the repository
+   git clone https://github.com/your-username/interpreter-smol.git
+   cd interpreter-smol
 
-    ```bash
-    # Set up your API keys as environment variables:
-    export GOOGLE_API_KEY="your-api-key-here"      # For Gemini
-    export OPENAI_API_KEY="your-api-key-here"      # For OpenAI
-    export ANTHROPIC_API_KEY="your-api-key-here"   # For Anthropic
-    export OPENROUTER_API_KEY="your-api-key-here"  # For OpenRouter
-    export HF_API_TOKEN="your-api-key-here"        # For Hugging Face
-    ```
+   # Install with basic dependencies
+   pip install -e .
+   ```
+
+2. Additional Features:
+
+   ```bash
+   # For Hugging Face models:
+   pip install -e .[hf]
+
+   # For all features including data science tools:
+   pip install -e .[complete]
+   ```
+
+3. Set up your API keys:
+
+   ```bash
+   # Set up your API keys as environment variables:
+   export GOOGLE_API_KEY="your-api-key-here"      # For Gemini
+   export OPENAI_API_KEY="your-api-key-here"      # For OpenAI
+   export ANTHROPIC_API_KEY="your-api-key-here"   # For Anthropic
+   export OPENROUTER_API_KEY="your-api-key-here"  # For OpenRouter
+   export HF_API_TOKEN="your-api-key-here"        # For Hugging Face
+   ```
 
 ## Basic Usage
 
