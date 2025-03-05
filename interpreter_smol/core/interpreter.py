@@ -14,7 +14,7 @@ import yaml
 from smolagents.agents import CodeAgent  # Local unrestricted version
 # Keep other tools from installed package
 from smolagents.default_tools import TOOL_MAPPING
-from interpreter_smol.tools import EnhancedPythonInterpreter
+from interpreter_smol.tools import UnrestrictedPythonInterpreter
 
 class Interpreter:
     """Simple Open-Interpreter-like interface built on SmolAgents."""
@@ -24,7 +24,7 @@ class Interpreter:
         model: str = "gemini",
         model_id: Optional[str] = None,
         api_key: Optional[str] = None,
-        tools: List[str] = ["enhanced_python", "web_search"],  # Using our enhanced Python interpreter
+        tools: List[str] = ["unrestricted_python", "web_search"],  # Using our unrestricted Python interpreter
         imports: List[str] = ["os", "sys", "numpy", "pandas", "matplotlib.pyplot"],
         temperature: float = 0.7,
         max_tokens: int = 8192,
@@ -101,7 +101,7 @@ class Interpreter:
         tools = []
         for tool_name in tool_names:
             if tool_name == "unrestricted_python" or tool_name == "enhanced_python":
-                tool = EnhancedPythonInterpreter(authorized_imports=all_imports)
+                tool = UnrestrictedPythonInterpreter(authorized_imports=all_imports)
                 tools.append(tool)
             elif tool_name in TOOL_MAPPING:
                 tool = TOOL_MAPPING[tool_name]()
@@ -185,7 +185,7 @@ def main():
     parser.add_argument("--model-id", default=None,
                         help="Specific model ID (defaults to best model for provider)")
     parser.add_argument("--tools", nargs="*",
-                        default=["enhanced_python", "web_search"],
+                        default=["unrestricted_python", "web_search"],
                         help="Tools to enable")
     parser.add_argument("--api-key", "-k", default=None,
                         help="API key for the model provider")

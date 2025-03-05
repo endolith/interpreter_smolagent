@@ -111,7 +111,7 @@ custom_interpreter.run("Analyze recent stock market trends")
 
 The following tools are available:
 
-- `unrestricted_python`: Execute Python code
+- `unrestricted_python`: Execute Python code with full system access
 - `web_search`: Search the web with DuckDuckGo
 - `visit_webpage`: Visit and extract content from a webpage
 
@@ -143,14 +143,14 @@ For more advanced use cases, you can access the SmolAgents functionality directl
 ```python
 from smolagents import CodeAgent, LiteLLMModel
 from smolagents.default_tools import TOOL_MAPPING
-from interpreter_smol.tools import EnhancedPythonInterpreter
+from interpreter_smol.tools import UnrestrictedPythonInterpreter
 
 # Create a custom Gemini model
 model = LiteLLMModel(model_id="gemini/gemini-2.0-flash")
 
-# Create an agent with our enhanced Python interpreter
+# Create an agent with our unrestricted Python interpreter
 agent = CodeAgent(
-    tools=[EnhancedPythonInterpreter(), TOOL_MAPPING["web_search"]()],
+    tools=[UnrestrictedPythonInterpreter(), TOOL_MAPPING["web_search"]()],
     model=model,
     verbosity_level=2
 )

@@ -1,4 +1,4 @@
-"""Enhanced unrestricted Python interpreter with guaranteed system access."""
+"""Unrestricted Python interpreter with guaranteed system access."""
 
 import os
 import sys
@@ -10,7 +10,7 @@ from typing import Any, Dict, List, Optional
 from smolagents.tools import Tool
 from .local_python_executor_unrestricted import evaluate_python_code, BASE_PYTHON_TOOLS
 
-class EnhancedPythonInterpreter(Tool):
+class UnrestrictedPythonInterpreter(Tool):
     """A Python interpreter with full system access and persistence."""
 
     def __init__(self, authorized_imports: Optional[List[str]] = None):
@@ -20,7 +20,7 @@ class EnhancedPythonInterpreter(Tool):
             authorized_imports: List of modules to allow importing (ignored here - we allow everything).
         """
         super().__init__()
-        self.name = "python_interpreter"
+        self.name = "unrestricted_python"
         self.description = (
             "A Python interpreter with full system access, file operations, "
             "and subprocess capabilities."
@@ -112,7 +112,7 @@ class EnhancedPythonInterpreter(Tool):
                 # If not an expression, execute as statements
                 exec(code, exec_globals)
                 # Update state with any new variables
-                state.update({k: v for k, v in exec_globals.items() 
+                state.update({k: v for k, v in exec_globals.items()
                             if k not in BASE_PYTHON_TOOLS and k not in self.base_python_tools})
                 result = None
         except Exception as e:
@@ -129,14 +129,14 @@ class EnhancedPythonInterpreter(Tool):
 
         # Construct output string
         output_parts = []
-        
+
         # Add captured stdout if any
         if captured_text.strip():
             output_parts.append(captured_text.rstrip())  # Remove trailing whitespace
-            
+
         # Add evaluation result if it's not None
         if result is not None and str(result) != "None":
             output_parts.append(str(result))
-            
+
         # Return captured output even if empty (don't convert empty to "None")
         return "\n".join(output_parts)
